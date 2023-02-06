@@ -14,18 +14,17 @@
 }
 
 .header {
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--whiteColorDeam);
+    background: transparent;
     width: 100%;
     padding: 1rem;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
 
     .logo {
-        color: var(--blackColor);
+        color: var(--whiteColor);
         font-weight: 600;
         align-items: center;
         justify-content: center;
@@ -33,7 +32,7 @@
 
         .icon {
             font-size: 25px;
-            color: var(--PrimaryColor);
+            color: var(--whiteColor);
             transform: translateY(5px);
         }
     }
@@ -42,7 +41,7 @@
         .navBar {
 
             position: absolute;
-            background: var(--whiteColorDeam);
+            background: var(--whiteColor);
             height: max-content;
             border-radius: 1rem;
             width: 80%;
@@ -117,7 +116,7 @@
     .toggleNavbar {
         .icon {
             font-size: 25px;
-            color: var(--PrimaryColor);
+            color: var(--whiteColor);
         }
 
         &:hover.icon {
@@ -127,5 +126,79 @@
     }
 
 
+
+}
+
+// media queries
+
+@media screen and (min-width:769px) {
+
+    .toggleNavbar,
+    .closeNavbar {
+        display: none;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+
+        .navBar {
+            .navLists {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                .navItem {
+                    .navLink {
+                        color: var(--whiteColor);
+                        padding: 0 0.45rem;
+                        font-size: 1rem;
+                        font-weight: 600;
+
+                        &:hover {
+
+                            color: rgba(75, 191, 227, 0.997);
+
+                        }
+
+
+                    }
+
+                }
+
+                .btn {
+                    margin-left: 1rem;
+
+                    a {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:960px) {
+    .header {
+
+        .navBar {
+
+            .navLists {
+                .navItem {
+                    padding: 0 0.7rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:1240px) {
+    .header {
+
+        padding: 1rem 8.5rem;
+
+    }
 
 }
